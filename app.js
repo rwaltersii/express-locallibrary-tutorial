@@ -17,13 +17,13 @@ app.use(helmet());
 //Set up mongoose connection
 var mongoose = require("mongoose");
 
-// var mongoDB =
-//   "mongodb+srv://rwalters:enterpriseA@cluster0.oxik9.mongodb.net/local_library?retryWrites=true&w=majority";
-
-// Set up mongoose connection
-var dev_db_url =
+var mongoDB =
   "mongodb+srv://rwalters:enterpriseA@cluster0.oxik9.mongodb.net/local_library?retryWrites=true&w=majority";
-var mongoDB = process.env.MONGODB_URI || dev_db_url;
+
+// // Set up mongoose connection
+// var dev_db_url =
+//   "mongodb+srv://rwalters:enterpriseA@cluster0.oxik9.mongodb.net/local_library?retryWrites=true&w=majority";
+// var mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
